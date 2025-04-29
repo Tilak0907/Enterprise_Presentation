@@ -1,36 +1,63 @@
 /* App.css */
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(to right, #74ebd5, #acb6e5);
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e) !important; /* Dark, modern gradient */
   min-height: 100vh;
+  overflow-x: hidden;
+  color: white;
+}
+
+.App {
+  text-align: center;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
 }
 
 .header {
-  background: linear-gradient(90deg, #1c92d2, #f2fcfe);
-  color: #0b2545;
-  padding: 30px 0;
-  text-align: center;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  padding: 40px 20px; /* Decreased padding for the navbar */
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  color: white;
+  animation: fadeInUp 1s ease-out;
+  min-width: 320px;
+  max-width: 1420px; /* Increase max-width to make the navbar wider */
 }
 
 .header h1 {
-  margin: 0;
-  font-size: 40px;
-  letter-spacing: 2px;
+  font-size: 3.2rem;
   font-weight: 800;
+  margin-bottom: 10px; /* Reduced margin to shrink the header */
+  color: #ff4b2b;
+  text-shadow: 2px 2px 8px #ff4b2b;
 }
 
 .header nav {
-  margin-top: 20px;
+  display: flex; /* Flexbox for row alignment */
+  justify-content: center; /* Center the links horizontally */
+  margin-top: 10px; /* Reduced margin to decrease space between title and nav */
+  height: 40px; /* Reduced height of the navbar */
+  white-space: nowrap; /* Prevent text from wrapping */
 }
 
 .header nav a {
-  color: #0b2545;
+  color: #fff;
   text-decoration: none;
-  margin: 0 20px;
-  font-size: 20px;
+  margin: 0 25px;
+  font-size: 18px; /* Increase font size for larger links */
   font-weight: 600;
   position: relative;
   transition: color 0.3s ease;
@@ -43,12 +70,12 @@
   height: 2px;
   bottom: -5px;
   left: 0;
-  background-color: #0b2545;
+  background-color: #ff4b2b;
   transition: width 0.3s ease;
 }
 
 .header nav a:hover {
-  color: #0077b6;
+  color: #ffed00;
 }
 
 .header nav a:hover::after {
@@ -57,27 +84,27 @@
 
 .main-content {
   flex: 1;
-  padding: 50px 30px;
+  padding: 60px 40px;
   max-width: 1200px;
-  margin: 30px auto;
-  background-color: white;
-  border-radius: 20px;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  margin: 40px auto;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 25px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
   animation: fadeIn 1s ease-in-out;
 }
 
 .main-content h2 {
-  color: #0077b6;
-  font-size: 32px;
+  color: #ffed00;
+  font-size: 2.8rem;
   margin-bottom: 20px;
   font-weight: 700;
 }
 
 .main-content p,
 .main-content ul {
-  font-size: 20px;
+  font-size: 1.1rem;
   line-height: 1.8;
-  color: #333;
+  color: #eaeaea;
 }
 
 .main-content ul {
@@ -86,12 +113,13 @@
 }
 
 .footer {
-  background: linear-gradient(90deg, #1c92d2, #f2fcfe);
-  color: #0b2545;
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
   text-align: center;
-  padding: 20px 0;
+  padding: 30px 20px;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 1.1rem;
+  box-shadow: 0 -8px 16px rgba(0, 0, 0, 0.2);
 }
 
 /* Fade-in animation for main content */
@@ -103,5 +131,40 @@
   100% {
     opacity: 1;
     transform: translateY(0px);
+  }
+}
+
+/* Slide-up animation for header */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .header {
+    padding: 40px 20px; /* Adjust padding for smaller screens */
+  }
+
+  .header h1 {
+    font-size: 2.5rem;
+  }
+
+  .header nav a {
+    font-size: 1.2rem; /* Adjust font size for smaller screens */
+  }
+
+  .main-content {
+    padding: 40px 20px;
+  }
+
+  .main-content h2 {
+    font-size: 2rem;
   }
 }

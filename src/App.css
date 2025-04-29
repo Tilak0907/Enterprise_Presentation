@@ -1,38 +1,117 @@
+/* App.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #ff758c, #ff7eb3); /* Bold Gradient Background */
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: white;
+}
+
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 60px 20px;
+  z-index: 10;
+}
+
+.App-header {
+  background: rgba(255, 255, 255, 0.12); /* Enhanced Transparency */
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 30px;
+  padding: 80px 50px;
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
+  min-width: 320px;
+  max-width: 900px;
+  animation: fadeInUp 1.5s ease-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.App-header:hover {
+  transform: scale(1.02);
+}
+
+.App-header h1 {
+  font-size: 3.8rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: #00e6b8; /* Electric Green */
+  text-shadow: 3px 3px 15px rgba(0, 230, 184, 0.6);
+}
+
+.App-header p {
+  font-size: 1.3rem;
+  font-weight: 300;
+  line-height: 1.75;
+  color: #e0e0e0;
+}
+
+.App-logo {
+  height: 150px;
+  animation: App-logo-spin 8s linear infinite;
+  margin-bottom: 40px;
+  filter: drop-shadow(0 4px 15px rgba(0, 230, 184, 0.5));
 }
 
 .App-link {
-  color: #61dafb;
+  color: #00e6b8;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.2rem;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
+.App-link:hover {
+  color: #ffee58;
+  text-decoration: underline;
+  transform: translateY(-5px);
+}
+
+/* Logo Spin Animation */
 @keyframes App-logo-spin {
-  from {
+  0% {
     transform: rotate(0deg);
   }
-  to {
+  100% {
     transform: rotate(360deg);
+  }
+}
+
+/* Smooth Content Appearance */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .App-header {
+    padding: 40px 20px;
+  }
+
+  .App-header h1 {
+    font-size: 2.6rem;
+  }
+
+  .App-header p {
+    font-size: 1rem;
   }
 }
